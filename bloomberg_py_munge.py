@@ -6,12 +6,19 @@ def bool_col_unnamed(col_name):
         return True
     return False
 
+class SpreadsheetError(Exception):
+    def __init__(self, message):
+        self.message = message
+    pass
+
 def from_excel(path, sheet, pivot=False):
     temp_df = None
     idx_last_valid = 0
     output = pd.DataFrame([], columns=['date', 'security'])
     xlsx = pd.ExcelFile(path)
     df = pd.read_excel(xlsx, sheet)
+    if str(df.iloc[0,0]) != "Date" or not bool_col_unnamed(df.columns[1]):
+        raise SpreadsheetError('Sheet needs to be filled from Cell A1')
     # iterate through all columns
     for col_name in df.columns:
         if not bool_col_unnamed(col_name):

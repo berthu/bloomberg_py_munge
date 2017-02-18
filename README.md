@@ -18,3 +18,6 @@ import pandas as pd
 import bloomberg_py_munge
 df = bloomberg_py_munge.from_excel('PATH_TO_FILE', 'Sheet1')
 ```
+
+## Requirements:
+I think it goes without saying that you need *Pandas*. Also, I haven't tested this on Python 3.

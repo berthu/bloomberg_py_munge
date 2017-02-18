@@ -41,9 +41,3 @@ def from_excel(path, sheet, pivot=False):
     if temp_df is not None:
         output = pd.concat([output, temp_df])
     return output
-
-if __name__ == "__main__":
-    df = from_excel("./go_bonds_ca_m20yrs.xlsx", "Sheet2")
-    print df
-    #df2 = pd.DataFrame([], columns=df.columns)
-    #df2.to_csv("./columns.csv")

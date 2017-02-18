@@ -97,3 +97,7 @@ ENV/
 .*.xls*
 
 *.csv
+
+bloomberg_test.py
+
+go_bonds_ca_m20yrs.xlsx

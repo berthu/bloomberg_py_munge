@@ -3,7 +3,7 @@ A Python module that munges Bloomberg historical xlsx output into Pandas datafra
 
 # Why is this needed?
 
-![Alt text](./img/exceelscreen.png?raw=true "Optional Title")
+![Alt text](./img/excelscreen.png?raw=true "Optional Title")
 
 # Usage:
 ```python

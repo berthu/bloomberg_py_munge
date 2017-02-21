@@ -101,3 +101,11 @@ ENV/
 bloomberg_test.py
 
 go_bonds_ca_m20yrs.xlsx
+
+*.iml
+
+.idea/misc.xml
+
+.idea/modules.xml
+
+.idea/vcs.xml

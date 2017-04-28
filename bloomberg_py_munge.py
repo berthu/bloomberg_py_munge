@@ -48,3 +48,22 @@ def from_excel(path, sheet, pivot=False):
     if temp_df is not None:
         output = pd.concat([output, temp_df])
     return output
+
+# routine gets all individual cells from columns and creates
+# an output with the symbol in one column, and identifier in the other
+def get_cells(path, sheet):
+    temp_df = None
+    idx_last_valid = 0
+    output = pd.DataFrame([], columns=['security', 'label'])
+    xlsx = pd.ExcelFile(path)
+    df = pd.read_excel(path, sheet)
+    for col_name in df.columns:
+        temp_df = pd.DataFrame([], columns=['security', 'label'])
+        label = col_name
+        idx_last_valid = df[col_name].last_valid_index()  
+        series_sec = df[col_name][1:idx_last_valid+1]
+        temp_df.security = series_sec
+        temp_df.label = col_name
+        if temp_df is not None:
+            output = pd.concat([output, temp_df])
+    return output

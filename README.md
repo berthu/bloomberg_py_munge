@@ -34,7 +34,7 @@ where label is the column names from the sheet.
 ```python
 import pandas as pd
 import bloomberg_py_munge
-df = bloomberg_py_munge.get_cell('PATH_TO_FILE', 'Sheet1')
+df = bloomberg_py_munge.get_cells('PATH_TO_FILE', 'Sheet1')
 ```
 
 # Requirements:
